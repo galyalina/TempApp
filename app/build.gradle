@@ -1,0 +1,96 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion rootProject.ext.compile_sdk_version
+    defaultConfig {
+        applicationId "com.chuppa.iotta.tempapp"
+        minSdkVersion rootProject.ext.min_sdk_version
+        targetSdkVersion rootProject.ext.target_sdk_version
+        versionCode 1
+        versionName "1.0"
+        // add multi-dex
+        multiDexEnabled true
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    def dependencies = rootProject.ext.dependencies
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    // kotlin
+    implementation dependencies.kotlin
+    implementation dependencies.kotlinReflect
+
+    // network
+    implementation dependencies.retrofit
+    implementation dependencies.retrofitConverter
+    implementation dependencies.retrofitAdapter
+
+    // rx
+    implementation dependencies.rxKotlin
+    implementation dependencies.rxJava
+    implementation dependencies.rxAndroid
+    implementation dependencies.coreKtx
+
+    // support
+    implementation androidSupportDependencies.androidxLegacySupportV4
+    implementation androidSupportDependencies.androidxAppCompat
+    implementation androidSupportDependencies.androidxVectorDrawable
+    implementation androidSupportDependencies.androidxCardView
+    implementation androidSupportDependencies.androidxRecyclerView
+    implementation androidSupportDependencies.androidxPalette
+    implementation androidSupportDependencies.androidxConstraintLayout
+    implementation androidSupportDependencies.androidxMultidex
+    implementation androidSupportDependencies.androidMaterial
+
+    // Koin for Android
+    implementation dependeciesinjection.koinAndroid
+    // Koin Android Scope feature
+    implementation dependeciesinjection.androidScope
+    // Koin Android ViewModel feature
+    implementation dependeciesinjection.viewModel
+    // AndroidX (based on koin-android)
+    // Koin AndroidX Scope feature
+    implementation dependeciesinjection.androidxScope
+    // Koin AndroidX ViewModel feature
+    implementation dependeciesinjection.androidxViewModel
+
+    // Extra libs
+    implementation dependencies.timber
+    implementation dependencies.gson
+    implementation dependencies.location
+    implementation dependencies.locationPlay
+
+    // Test
+    // Required -- JUnit 4 framework
+    testImplementation dependencies.junit
+    // Optional -- Robolectric environment
+    testImplementation dependencies.androidxTest
+    // Optional -- Mockito framework
+    testImplementation dependencies.mockito
+
+    // Additional
+    testImplementation dependencies.mockitoKotlin
+    // AssertJ core is a Java library that provides a fluent interface for writing assertions. Its main goal is to improve test code readability and make maintenance of tests easier.
+    testImplementation dependencies.assertj
+
+    // UI tests
+    androidTestImplementation dependencies.espresso
+    androidTestImplementation dependencies.androidxTestRunner
+    androidTestImplementation dependencies.androidxTestRules
+
+}

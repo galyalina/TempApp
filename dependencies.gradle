@@ -1,0 +1,109 @@
+ext {
+    min_sdk_version = 19
+    compile_sdk_version = 28
+    target_sdk_version = 28
+    kotlin_version = "1.3.21"
+
+    rxJavaVersion = "2.2.8"
+    rxAndroidVersion = "2.1.1"
+    rxKotlinVersion = "2.3.0"
+    ktxVersion = '1.0.0'
+    ktxTestVersion = '1.0.1'
+    ktxTestRunnerVersion = '1.1.0'
+    ktxTestRulesVersion = '1.1.0'
+
+    retrofitVersion = "2.5.0"
+    daggerVersion = "2.20"
+    gsonVersion = "2.8.5"
+    timberVersion = "4.7.1"
+    rxLocationVersion = "1.0.5"
+    playServicesLocationVersion = "11.8.0"
+
+    //Testing
+    junitVersion = "4.12"
+    assertJVersion = "3.11.1"
+    mockitoKotlinVersion = "1.6.0"
+    mockitoCore = "1.10.19"
+
+    ktxTestVersion = '1.0.1'
+    ktxTestRunnerVersion = '1.1.0'
+    ktxTestRulesVersion = '1.1.0'
+    supportTestVesion = '1.1.0-alpha4'
+    espressoVersion = '3.1.0'
+
+    // Android support libs
+    androidxAnnotationVersion = "1.0.0"
+    androidxTestRunnerVersion = "1.1.0"
+    androidxTestRulesVersion = "1.1.0"
+    androidxTestExtVersion = "1.0.0"
+    androidxTestEspressoVersion = "3.1.0"
+    androidxLegacySupportV4Version = "1.0.0"
+    androidxAppCompatVersion = "1.0.2"
+    androidxVectorDrawableVersion = "1.0.1"
+    androidxCardViewVersion = "1.0.0"
+    androidxRecyclerViewVersion = "1.0.0"
+    androidxPaletteVersion = "1.0.0"
+    androidxConstraintLayoutVersion = "2.0.0-alpha3"
+    androidxMultidexVersion = "2.0.1"
+    androidMaterialVersion = "1.1.0-alpha01"
+    androidKoin = "2.0.0-rc-2"
+
+    dependencies = [
+            // kotlin
+            kotlin                : "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version",
+
+            kotlinReflect         : "org.jetbrains.kotlin:kotlin-reflect:$kotlin_version",
+
+            rxKotlin              : "io.reactivex.rxjava2:rxkotlin:$rxKotlinVersion",
+            rxJava                : "io.reactivex.rxjava2:rxjava:$rxJavaVersion",
+            rxAndroid             : "io.reactivex.rxjava2:rxandroid:$rxAndroidVersion",
+
+            junit                 : "junit:junit:$junitVersion",
+            androidxTest          : "androidx.test:core:$ktxVersion",
+            mockito               : "org.mockito:mockito-core:$mockitoCore",
+            mockitoKotlin         : "com.nhaarman:mockito-kotlin:${mockitoKotlinVersion}",
+
+            espresso              : "androidx.test.espresso:espresso-core:$espressoVersion",
+            androidxTestRunner    : "androidx.test:runner:$ktxTestRunnerVersion",
+            androidxTestRules     : "androidx.test:rules:$ktxTestRulesVersion",
+            assertj               : "org.assertj:assertj-core:$assertJVersion",
+
+            dagger                : "com.google.dagger:dagger:$daggerVersion",
+            daggerCompiler        : "com.google.dagger:dagger-compiler:$daggerVersion",
+            daggerAndroid         : "com.google.dagger:dagger-android:$daggerVersion",
+            daggerAndroidSupport  : "com.google.dagger:dagger-android-support:$daggerVersion",
+            daggerAndroidProcessor: "com.google.dagger:dagger-android-processor:$daggerVersion",
+
+            retrofit              : "com.squareup.retrofit2:retrofit:$retrofitVersion",
+            retrofitConverter     : "com.squareup.retrofit2:converter-gson:$retrofitVersion",
+            retrofitAdapter       : "com.squareup.retrofit2:adapter-rxjava2:$retrofitVersion",
+
+            coreKtx               : "androidx.core:core-ktx:$ktxVersion",
+            gson                  : "com.google.code.gson:gson:$gsonVersion",
+            timber                : "com.jakewharton.timber:timber:$timberVersion",
+            location              : "com.patloew.rxlocation:rxlocation:$rxLocationVersion",
+            locationPlay          : "com.google.android.gms:play-services-location:$playServicesLocationVersion"
+    ]
+
+
+    dependeciesinjection = [
+            koinAndroid      : "org.koin:koin-android:$androidKoin",
+            androidScope     : "org.koin:koin-android-scope:$androidKoin",
+            viewModel        : "org.koin:koin-android-viewmodel:$androidKoin",
+            androidxScope    : "org.koin:koin-androidx-scope:$androidKoin",
+            androidxViewModel: "org.koin:koin-androidx-viewmodel:$androidKoin"
+    ]
+
+    androidSupportDependencies = [
+            // support
+            androidxLegacySupportV4 : "androidx.legacy:legacy-support-v4:$androidxLegacySupportV4Version",
+            androidxAppCompat       : "androidx.appcompat:appcompat:$androidxAppCompatVersion",
+            androidxVectorDrawable  : "androidx.vectordrawable:vectordrawable:$androidxVectorDrawableVersion",
+            androidxCardView        : "androidx.cardview:cardview:$androidxCardViewVersion",
+            androidxRecyclerView    : "androidx.recyclerview:recyclerview:$androidxRecyclerViewVersion",
+            androidxPalette         : "androidx.palette:palette:$androidxPaletteVersion",
+            androidxConstraintLayout: "androidx.constraintlayout:constraintlayout:$androidxConstraintLayoutVersion",
+            androidxMultidex        : "androidx.multidex:multidex:$androidxMultidexVersion",
+            androidMaterial         : "com.google.android.material:material:$androidMaterialVersion"
+    ]
+}
