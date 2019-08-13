@@ -74,6 +74,7 @@ dependencies {
     implementation dependencies.gson
     implementation dependencies.location
     implementation dependencies.locationPlay
+    implementation dependencies.liquidCore
 
     // Test
     // Required -- JUnit 4 framework
